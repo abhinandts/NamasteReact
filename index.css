@@ -1,3 +1,59 @@
-#heading{
-    color: rgb(38, 184, 1);
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: .1px solid;
+    padding: 8px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.nav-links > ul {
+    display: flex;
+}
+
+.nav-links > ul > li {
+    font-size: 28px;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* -- Restaurant card */
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card {
+    background-color:rgb(243, 240, 237);
+    width: 200px;
+    padding:5px;
+    margin: 2px;
+    border-radius: 5px;
+}
+.res-card:hover {
+    border: .5px solid black;
+    cursor: pointer;
+}
+
+.res-logo  {
+    width: 100%;
+    height: 150px;
+}
+
+.res-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.time-star {
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
 }
