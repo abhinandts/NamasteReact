@@ -57,3 +57,8 @@
     flex-wrap: wrap;
     align-items: baseline;
 }
+
+.filter-btn {
+    margin: 15px;
+    cursor: pointer;
+}
