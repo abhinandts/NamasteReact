@@ -62,3 +62,9 @@
     margin: 15px;
     cursor: pointer;
 }
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin: 16px;
+}
