@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
@@ -8,8 +8,6 @@ const Body = () => {
 
     const [listOfRestaurants, setListOfRestaurants] = useState(resList);
     const [filteredRes, setFilteredRes] = useState(resList);
-
-    useEffect(() => console.log("useEffect called"), []);
 
     const [searchText, setSearchText] = useState("");
 
