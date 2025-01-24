@@ -57,3 +57,12 @@
     flex-wrap: wrap;
     align-items: baseline;
 }
+
+
+.search {
+    padding: 8px;
+}
+/* 
+.search-btn {
+    margin: 10px;
+} */
