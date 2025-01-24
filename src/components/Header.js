@@ -1,13 +1,14 @@
 
 import { LOGO_URL } from "../utils/constants";
 
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
-    let [superBtnName,setSuperBtnName] = useState("Log In");
+    let [superBtnName, setSuperBtnName] = useState("Log In");
 
-    useEffect(()=>console.log("useEffect invoked"),[superBtnName]);
+    useEffect(() => console.log("useEffect invoked"), [superBtnName]);
 
     return (
         <div className='header'>
@@ -17,9 +18,15 @@ const Header = () => {
 
             <div className='nav-links'>
                 <ul>
-                    <li>Home</li>
-                    <li>Contact Us</li>
-                    <li>About Us</li>
+                    <li>
+                        <Link to="/" >Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/contact">Contact Us</Link>
+                    </li>
+                    <li>
+                        <Link to="/about" >About Us</Link >
+                    </li>
                     <li>Cart</li>
                     <li>
                         <button className="login"
