@@ -1,8 +1,10 @@
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router";
 
 import RestaurantCard from "./RestaurantCard";
 
+import { PRODUCTS_API } from "../utils/constants";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 
@@ -13,22 +15,20 @@ const Body = () => {
 
     const [searchInput, setSearchInput] = useState("");
 
+    useEffect(() => {
+        const fetchData = async () => {
 
-    useEffect(() => fetchData(), []);
+            const data = await fetch(PRODUCTS_API);
 
-    const fetchData = async () => {
+            const json = await data.json();
 
-        const data = await fetch('http://localhost:5000/api/get-products');
+            setResListSV(json);
+            setRestaurants(json);
+        }
 
-        const gson = await data.json();
+        fetchData()
+    }, []);
 
-        console.log(gson);
-
-        setTimeout(() => {
-            setResListSV(gson)
-            setRestaurants(gson)
-        }, 1000)
-    }
 
     return resListSV.length === 0 ? <Shimmer /> : (
         <div className='body'>
@@ -61,8 +61,13 @@ const Body = () => {
             <div className='res-container'>
                 {
                     resListSV.map(
-                        (restaurant, index) =>
-                            <RestaurantCard key={index} resData={restaurant} />
+                        (restaurant) =>
+                            <Link
+                                key={restaurant.id}
+                                to={"restaurants/" + restaurant._id}
+                            >
+                                <RestaurantCard resData={restaurant} />
+                            </Link>
                     )
                 }
             </div>
